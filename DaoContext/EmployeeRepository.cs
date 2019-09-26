@@ -16,29 +16,45 @@ namespace DaoContext
     {
         public async Task<IEnumerable<Employee>> GetAll()
         {
+            //IEnumerable<Employee> respuesta;
+            //var client = new HttpClient();
+            //client.BaseAddress = new Uri(Values.UrlApi);
+            //HttpResponseMessage response = await client.GetAsync(Values.UrIApiEmployees);
+            //response.EnsureSuccessStatusCode();
+            //string content = await response.Content.ReadAsStringAsync();
+            //respuesta = JsonConvert.DeserializeObject<IEnumerable<Employee>>(content);
+            //return respuesta;
             IEnumerable<Employee> respuesta;
 
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(Values.UrlApi);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                using (var client = new HttpClient())
+                {   
+                    client.BaseAddress = new Uri(Values.UrlApi);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var response = await client.GetAsync(Values.UrIApiEmployees);
+                    var response = client.GetAsync(Values.UrIApiEmployees).Result;
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonMessage;
-                    using (Stream responseStream = response.Content.ReadAsStreamAsync().Result)
+                    if (response.IsSuccessStatusCode)
                     {
-                        jsonMessage = new StreamReader(responseStream).ReadToEnd();
-                        return respuesta = JsonConvert.DeserializeObject<IEnumerable<Employee>>(jsonMessage);
+                        string jsonMessage;
+                        using (Stream responseStream = response.Content.ReadAsStreamAsync().Result)
+                        {
+                            jsonMessage = new StreamReader(responseStream).ReadToEnd();
+                            return respuesta = JsonConvert.DeserializeObject<IEnumerable<Employee>>(jsonMessage);
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }
-                else
-                {
-                    return null;
-                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
