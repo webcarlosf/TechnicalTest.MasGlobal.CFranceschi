@@ -43,10 +43,32 @@ namespace LogicContext
             return respuesta;
         }        
 
-        public Task<List<EmployeeSalary>> GetById(int Id)
+        public async Task<List<EmployeeSalary>> GetById(int Id)
         {
-            throw new NotImplementedException();
-        }
+            List<EmployeeSalary> respuesta = new List<EmployeeSalary>();
+            EmployeeSalary employeeSalary = new EmployeeSalary();
 
+            var result = await iemployeeRepository.GetAll();
+
+            var employee = result.Where(x => x.Id == Id).FirstOrDefault();
+            
+            if (employee.ContractTypeName == Values.ContractHourly)
+            {
+                var employeeHourly = Mapper.Map<Employee, EmployeeHourCalculateDto>(employee);
+                employeeHourly.CalculateSalary();
+                employeeSalary = Mapper.Map<EmployeeHourCalculateDto, EmployeeSalary>(employeeHourly);
+            }
+            else
+            {
+                var employeeMonthly = Mapper.Map<Employee, EmployeeMonthlyCalculateDto>(employee);
+                employeeMonthly.CalculateSalary();
+                employeeSalary = Mapper.Map<EmployeeMonthlyCalculateDto, EmployeeSalary>(employeeMonthly);
+            }
+
+            respuesta.Add(employeeSalary);
+
+            return respuesta;
+        }
+      
     }
 }

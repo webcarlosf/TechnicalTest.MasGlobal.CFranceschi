@@ -14,8 +14,10 @@ namespace Helpers
 
         public const string ContractMonthly = "MonthlySalaryEmployee";
 
-        public const string UrlApiLocal = "https://localhost:44363/Api/";
+        public const string UrlApiLocal = "http://localhost:63330/Apis/";
 
-        public const string UrIApiGetAllEmployees = "/GetAllEmployees";
+        public const string UrIApiGetAllEmployees = "GetAllEmployees";
+
+        public const string UrIApiGetEmployeeById = "GetEmployeeById/?Id=";
     }
 }

@@ -13,21 +13,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTestProject", "UnitTest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{15BBB0E9-A811-440A-9328-E90AD7AB4875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtoContext", "DtoContext\DtoContext.csproj", "{8DA3D4CC-CAF1-4567-BE24-2C523A6E1D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DtoContext", "DtoContext\DtoContext.csproj", "{8DA3D4CC-CAF1-4567-BE24-2C523A6E1D31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessObject", "DataAccessObject", "{C49440FC-8199-4D03-A909-FBF2D2ADB122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaoContext", "DaoContext\DaoContext.csproj", "{29161F1B-FA7C-40EF-BFCC-CEB2D84494E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaoContext", "DaoContext\DaoContext.csproj", "{29161F1B-FA7C-40EF-BFCC-CEB2D84494E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{F9126642-86A2-4EA0-B6E5-35134562F2DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{F9126642-86A2-4EA0-B6E5-35134562F2DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{01A71271-074E-40A3-B088-38028E15997B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{01A71271-074E-40A3-B088-38028E15997B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicContext", "LogicContext\LogicContext.csproj", "{CB6A146D-F31F-400A-81B1-F413F8D9019B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicContext", "LogicContext\LogicContext.csproj", "{CB6A146D-F31F-400A-81B1-F413F8D9019B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B3FCF63A-EDF4-48D1-B0B3-CA628640A721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B3FCF63A-EDF4-48D1-B0B3-CA628640A721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalTest.MasGlobal.CFranceschi2", "TechnicalTest.MasGlobal.CFranceschi2\TechnicalTest.MasGlobal.CFranceschi2.csproj", "{20E1BD02-44FD-4F7E-9EB8-77E9DDC08601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalTest.MasGlobal.CFranceschi2", "TechnicalTest.MasGlobal.CFranceschi2\TechnicalTest.MasGlobal.CFranceschi2.csproj", "{20E1BD02-44FD-4F7E-9EB8-77E9DDC08601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

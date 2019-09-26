@@ -23,36 +23,33 @@ namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers
 
         public JsonResult SearchEmployees(string Id)
         {
+            string Uri = "";
             if (string.IsNullOrEmpty(Id))
             {
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(Values.UrlApiLocal);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var response = client.GetAsync(Values.UrIApiGetAllEmployees).Result;
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string jsonMessage;
-                        using (Stream responseStream = response.Content.ReadAsStreamAsync().Result)
-                        {
-                            jsonMessage = new StreamReader(responseStream).ReadToEnd();
-                            var json = JsonConvert.DeserializeObject<IEnumerable<Employee>>(jsonMessage);
-                            return Json(json);
-                        }
-                    }
-                    else
-                    {
-                        throw new HandlerExceptions(MessagesHandler.MessagesConectionError);
-                    }
-                }
+                Uri = Values.UrIApiGetAllEmployees;
             }
             else
             {
-                var json = "";
-                return Json(json);
+                Uri = Values.UrIApiGetEmployeeById + Id;
+            }
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Values.UrlApiLocal);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = client.GetAsync(Uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = JsonConvert.DeserializeObject<IEnumerable<Employee>>(response.Content.ReadAsStringAsync().Result);
+                    return Json(json);
+                }
+                else
+                {
+                    throw new HandlerExceptions(MessagesHandler.MessagesConectionError);
+                }
             }
         }
     }

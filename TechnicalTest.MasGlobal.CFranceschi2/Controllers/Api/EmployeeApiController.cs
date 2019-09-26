@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers.Api
 {
-    //[Route("Api/[controller]")]
     [ApiController]
     public class EmployeeApiController : ControllerBase
     {
@@ -20,7 +19,7 @@ namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers.Api
         }
 
         [HttpGet]
-        [Route("Api/GetAllEmployees")] 
+        [Route("Apis/GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
             try
@@ -33,5 +32,21 @@ namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers.Api
                 return BadRequest(ex);
             }
         }
+
+        [HttpGet]
+        [Route("Apis/GetEmployeeById")]
+        public async Task<IActionResult> GetAllEmployeeById(int Id)
+        {
+            try
+            {
+                return Ok(await _IemployeeLogicContext.GetById(Id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex);
+            }
+        }
+
     }
 }
