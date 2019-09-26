@@ -22,7 +22,7 @@ namespace DaoContext
             {    
                 using (var client = new HttpClient())
                 {   
-                    client.BaseAddress = new Uri(Values.UrlApi);
+                    client.BaseAddress = new Uri(Values.UrlEmployeesApi);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

@@ -20,7 +20,7 @@ namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers.Api
         }
 
         [HttpGet]
-        [Route("Api/GetAllEmployees")] // https://localhost:44363/Api/GetAllEmployees
+        [Route("Api/GetAllEmployees")] 
         public async Task<IActionResult> GetAllEmployees()
         {
             try
