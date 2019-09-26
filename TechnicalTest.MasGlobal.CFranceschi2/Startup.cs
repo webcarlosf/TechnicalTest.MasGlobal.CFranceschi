@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DaoContext;
+using DaoContext.AppConfigurations;
 using DaoContext.Repositories.Interfaces;
 using LogicContext;
 using LogicContext.Repositories.Interfaces;
@@ -43,17 +44,7 @@ namespace TechnicalTest.MasGlobal.CFranceschi2
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IEmployeeLogicContext, EmployeeLogicContext>();
 
-            //services.AddSwaggerGen(options =>
-            //{
-            //    options.DescribeAllEnumsAsStrings();
-            //    options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info()
-            //    {
-            //        Title = "CFranceschi MasGlobal Test",
-            //        Version = "v1",
-            //        Description = "Cfranceschi MasGlobal Test",
-            //        TermsOfService = "Test"
-            //    });
-            //});
+            MapsEmployee.Initialize();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

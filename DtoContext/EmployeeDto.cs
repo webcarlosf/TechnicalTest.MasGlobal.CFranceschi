@@ -5,8 +5,10 @@ using System.Text;
 
 namespace DtoContext
 {
-    public class EmployeeDto : Employee
+    public abstract class EmployeeDto : Employee
     {
         public double AnnualSalary { get; set; }
+
+        public abstract void CalculateSalary();
     }
 }
