@@ -11,7 +11,7 @@ namespace DtoContext
         {
             try
             {
-                if (ContractTypeName == Values.ContractHourly)
+                if (ContractTypeName == Values.ContractMonthly)
                 {
                     AnnualSalary = 120 * HourlySalary * 12;
                 }

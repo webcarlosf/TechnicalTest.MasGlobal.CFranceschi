@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using DtoContext;
 using Entities.Models;
 using Helpers;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +44,7 @@ namespace TechnicalTest.MasGlobal.CFranceschi2.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var json = JsonConvert.DeserializeObject<IEnumerable<Employee>>(response.Content.ReadAsStringAsync().Result);
+                    var json = JsonConvert.DeserializeObject<IEnumerable<EmployeeSalary>>(response.Content.ReadAsStringAsync().Result);
                     return Json(json);
                 }
                 else

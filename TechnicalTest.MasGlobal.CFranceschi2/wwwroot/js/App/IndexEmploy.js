@@ -17,17 +17,17 @@ function searchEmployees() {
             var tablaBody = "";
             $.each(respuesta, function (indice, item) {
                 tablaBody += "<tr>";
-                tablaBody += "<td>" + item.RoleId + "</td>";
-                tablaBody += "<td> " + item.Name + "</td>";
-                tablaBody += "<td>" + item.ContractTypeName + "</td>";
-                tablaBody += "<td>" + item.RoleName + "</td>";
-                tablaBody += "<td>" + item.RoleDescription + "</td>";
-                tablaBody += "<td>" + item.HourlySalary + "</td>";
-                tablaBody += "<td>" + item.MonthlySalary + "</td>";
-                tablaBody += "<td>" + item.AnnualSalary + "</td>";
+                debugger;
+                tablaBody += "<td>" + item.id + "</td>";
+                tablaBody += "<td> " + item.name + "</td>";
+                tablaBody += "<td>" + item.contractTypeName + "</td>";
+                tablaBody += "<td>" + item.roleName + "</td>";
+                tablaBody += "<td>" + item.roleDescription + "</td>";
+                //tablaBody += "<td>" + item.hourlySalary + "</td>";
+                //tablaBody += "<td>" + item.monthlySalary + "</td>";
+                tablaBody += "<td>" + item.annualSalary + "</td>";
                 tablaBody += "</tr> ";
             });
-            tablaBody += "<tbody></table>";
             $('#tblEmployee tbody').append(tablaBody);
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -48,14 +48,14 @@ function SearchById(Id) {
             tablaBody += " </thead><tbody>";
             $.each(respuesta, function (indice, item) {
                 tablaBody += "<tr>";
-                tablaBody += "<td>" + item.RoleId + "</td>";
-                tablaBody += "<td> " + item.Name + "</td>";
-                tablaBody += "<td>" + item.ContractTypeName + "</td>";
-                tablaBody += "<td>" + item.RoleName + "</td>";
-                tablaBody += "<td>" + item.RoleDescription + "</td>";
-                tablaBody += "<td>" + item.HourlySalary + "</td>";
-                tablaBody += "<td>" + item.MonthlySalary + "</td>";
-                tablaBody += "<td>" + item.AnnualSalary + "</td>";
+                tablaBody += "<td>" + item.id + "</td>";
+                tablaBody += "<td> " + item.name + "</td>";
+                tablaBody += "<td>" + item.contractTypeName + "</td>";
+                tablaBody += "<td>" + item.roleName + "</td>";
+                tablaBody += "<td>" + item.roleDescription + "</td>";
+                //tablaBody += "<td>" + item.hourlySalary + "</td>";
+                //tablaBody += "<td>" + item.monthlySalary + "</td>";
+                tablaBody += "<td>" + item.annualSalary + "</td>";
                 tablaBody += "</tr> ";
             });
             tablaBody += "<tbody></table>";
