@@ -41,7 +41,8 @@ namespace LogicContext
             respuesta.AddRange(Mapper.Map<IEnumerable<EmployeeMonthlyCalculateDto>, IEnumerable<EmployeeSalary>>(employeeMonthly).ToList());
 
             return respuesta;
-        }        
+        }
+        
 
         public async Task<List<EmployeeSalary>> GetById(int Id)
         {

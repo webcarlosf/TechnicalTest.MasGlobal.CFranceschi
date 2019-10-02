@@ -41,7 +41,8 @@ namespace TechnicalTest.MasGlobal.CFranceschi2
 
             services.AddSingleton(Configuration);
 
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            //services.AddScoped<IEmployeeRepository, EmployeeRepository>(); // api
+            services.AddScoped<IEmployeeRepository, EmployeeContextDbRepository>(); // repositorio de datos
             services.AddScoped<IEmployeeLogicContext, EmployeeLogicContext>();
 
             MapsEmployee.Initialize();

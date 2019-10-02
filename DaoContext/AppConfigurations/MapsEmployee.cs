@@ -22,7 +22,7 @@ namespace DaoContext.AppConfigurations
                 cfg.CreateMap<EmployeeHourCalculateDto, EmployeeSalary>();
                 cfg.CreateMap<EmployeeMonthlyCalculateDto, EmployeeSalary>();
 
-                //cfg.CreateMap<Models.Employee, Model.Employee>();
+                cfg.CreateMap<Entities.Models.Employee, Entities.Models.Employee>();
             });
         }
 

@@ -26,12 +26,12 @@ namespace DaoContext
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var response = client.GetAsync(Values.UrIApiEmployees).Result;
+                    var response = await client.GetAsync(Values.UrIApiEmployees);
 
                     if (response.IsSuccessStatusCode)
                     {
                         string jsonMessage;
-                        using (Stream responseStream = response.Content.ReadAsStreamAsync().Result)
+                        using (Stream responseStream = response.Content.ReadAsStreamAsync().Result)// revisar
                         {
                             jsonMessage = new StreamReader(responseStream).ReadToEnd();
                             return respuesta = JsonConvert.DeserializeObject<IEnumerable<Employee>>(jsonMessage);

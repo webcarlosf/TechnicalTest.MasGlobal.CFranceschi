@@ -13,14 +13,13 @@ namespace DtoContext
             {
                 if (ContractTypeName == Values.ContractMonthly)
                 {
-                    AnnualSalary = 120 * HourlySalary * 12;
+                    AnnualSalary = MonthlySalary * 12;
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
     }
 }
